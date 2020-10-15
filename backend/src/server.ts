@@ -3,6 +3,7 @@ import 'express-async-errors'
 
 import errorHandler from './errors/handler';
 import path from 'path'
+import cors from 'cors'
 
 import './database/connection'
 
@@ -10,6 +11,7 @@ import routes from './routes';
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
