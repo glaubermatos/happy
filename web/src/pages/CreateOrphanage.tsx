@@ -31,10 +31,6 @@ export default function CreateOrphanage() {
     });
   }
 
-  function handleToggleOpenOnWeekends(){
-    setOpenOnWeekends(!open_on_weekends);
-  }
-
   function handleSelectImage(event: ChangeEvent<HTMLInputElement>){
     if(!event.target.files) {
       return;
@@ -152,8 +148,8 @@ export default function CreateOrphanage() {
               <label htmlFor="open_on_weekends">Atende fim de semana</label>
 
               <div className="button-select">
-                <button type="button" className={open_on_weekends ? 'active' : ''} onClick={handleToggleOpenOnWeekends}>Sim</button>
-                <button type="button" className={!open_on_weekends ? 'active' : ''} onClick={handleToggleOpenOnWeekends}>Não</button>
+                <button type="button" className={open_on_weekends ? 'active' : ''} onClick={() => setOpenOnWeekends(true)}>Sim</button>
+                <button type="button" className={!open_on_weekends ? 'active' : ''} onClick={() => setOpenOnWeekends(false)}>Não</button>
               </div>
             </div>
           </fieldset>
